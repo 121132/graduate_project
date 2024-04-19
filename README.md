@@ -24,7 +24,7 @@ CAU personal graduate project
 `docker -v`
 - 安装nvidia-docker
 
-`distribution=$(. /etc/os-release;echo $ID$VERSION_ID)`
+- `distribution=$(. /etc/os-release;echo $ID$VERSION_ID)`
 
 `curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -`
 
