@@ -78,7 +78,6 @@ GET http://your_ip:your_port
 `import torch.optim as optim`  
 `from torchvision import datasets, transforms`  
 `from torch.utils.data import DataLoader`  
-
 `# 定义数据转换`  
 `data_transforms = transforms.Compose([`  
 `    transforms.Resize(256),`  
@@ -88,24 +87,18 @@ GET http://your_ip:your_port
 `        transforms.ToTensor(),`  
 `        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])`   
 `])`  
-
 `# 加载数据集`  
 `train_dataset = datasets.ImageFolder('/kaggle/input/corn-orginal/corn_orginal',   transform=data_transforms)`  
-
 `# 定义数据加载器`  
 `train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)`  
-
-
 `# 定义模型`  
 `model = CovidGoogleNet(`  
 `    num_classes=4,`  
 `    pretrained=False,`  
 `)`  
-
 `# 定义损失函数和优化器`  
 `criterion = nn.CrossEntropyLoss()`  
 `optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)`  
-
 `# 训练模型`  
 `num_epochs = 50  # 定义训练周期数`  
 `for epoch in range(num_epochs):`  
