@@ -112,7 +112,8 @@ GET http://your_ip:your_port
 `        optimizer.step()`  
 `        running_loss += loss.item()`  
 `    print(f"Epoch {epoch+1}/{num_epochs}, Loss: {running_loss/len(train_loader)}")`  
-保存模型：`torch.save(model.state_dict(), '/kaggle/working/inception-new.pt')`  
+`#保存模型`  
+`torch.save(model.state_dict(), '/kaggle/working/inception-new.pt')`  
 
 
 #### 通信部分
