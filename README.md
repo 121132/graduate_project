@@ -25,15 +25,15 @@ CAU personal graduate project
 `sudo service docker stop`  
 `sudo service docker start`  
 ## 2. 构建docker映像
-- **调试主机**  
+### **调试主机**  
  - **安装docker desktop**  
  [docker desktop官网](https://www.docker.com/products/docker-desktop/)  
  - **
-- **服务器**  
+### **服务器**  
  - **构建docker映像**  
  `cd /your_path_to/Docker`  
- `bash build.sh`    
- 可能会遇到的问题：  
+ `bash build.sh`  
+ (可能会遇到的问题：)    
  **`ERROR: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied`**  
  表明当前用户权限不够，两种解决办法：  
  **切换为root用户**`su root`  
