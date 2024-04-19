@@ -18,10 +18,30 @@ CAU personal graduate project
 `curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -`  
 `curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list`  
 `curl -s -L https://nvidia.github.io/libnvidia-container/experimental/$distribution/libnvidia-container-experimental.list | sudo tee /etc/apt/sources.list.d/libnvidia-container-experimental.list`  
-(上面几行一起运行)  
+(上面四条一起运行)  
 `sudo apt-get update`  
 `sudo apt-get install -y nvidia-docker2`  
 - **重启docker**  
 `sudo service docker stop`  
 `sudo service docker start`  
-## 2. 
+## 2. 构建docker映像
+- **调试主机**  
+ - **安装docker desktop**  
+ [docker desktop官网](https://www.docker.com/products/docker-desktop/)  
+ - **
+- **服务器**  
+ - **构建docker映像**  
+ `cd /your_path_to/Docker`  
+ `bash build.sh`  
+ 可能会遇到的问题：  
+ 1. `ERROR: failed to solve: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y     python3.8     python3-pip     python3-tk     xvfb" did not complete successfully: exit code: 100`  
+ 表明当前用户权限不够，两种解决办法：  
+ **切换为root用户**  
+ `su root`  
+ **给当前用户权限**  
+ `sudo groupadd docker`  
+ `sudo gpasswd -a your_username docker`  
+ `newgrp docker`  
+ 2. `ERROR: failed to solve: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y     python3.8     python3-pip     python3-tk     xvfb" did not complete successfully: exit code: 100`  
+ 表明网络问题下载不了，尝试换源或者换个vpn  
+ - **
