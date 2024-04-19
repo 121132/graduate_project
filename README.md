@@ -34,14 +34,13 @@ CAU personal graduate project
  `cd /your_path_to/Docker`  
  `bash build.sh`  
  可能会遇到的问题：  
- 1. `ERROR: failed to solve: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y     python3.8     python3-pip     python3-tk     xvfb" did not complete successfully: exit code: 100`  
+ **`ERROR: failed to solve: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y     python3.8     python3-pip     python3-tk     xvfb" did not complete successfully: exit code: 100`**  
  表明当前用户权限不够，两种解决办法：  
- **切换为root用户**  
- `su root`  
+ **切换为root用户**`su root`  
  **给当前用户权限**  
  `sudo groupadd docker`  
  `sudo gpasswd -a your_username docker`  
  `newgrp docker`  
- 2. `ERROR: failed to solve: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y     python3.8     python3-pip     python3-tk     xvfb" did not complete successfully: exit code: 100`  
+ **`ERROR: failed to solve: process "/bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y     python3.8     python3-pip     python3-tk     xvfb" did not complete successfully: exit code: 100`**  
  表明网络问题下载不了，尝试换源或者换个vpn  
  - **
