@@ -9,7 +9,10 @@ CAU personal graduate project
 `sudo apt-get update`  
 `sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg \ lsb-release`  
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`  
-`echo \ "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`  
+`echo \ `
+`"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ `  
+`$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`  
+[如果报错可能是复制格式问题，请参考这篇文章](https://blog.csdn.net/SUNbrightness/article/details/116783604)  
 `sudo apt-get update`  
 `sudo apt-get install docker-ce docker-ce-cli containerd.io`  
 - **测试docker是否安装**  
@@ -112,10 +115,8 @@ GET http://your_ip:your_port
 `        optimizer.step()`  
 `        running_loss += loss.item()`  
 `    print(f"Epoch {epoch+1}/{num_epochs}, Loss: {running_loss/len(train_loader)}")`  
-`#保存模型`  
-`torch.save(model.state_dict(), '/kaggle/working/inception-new.pt')`  
-
-
+`# 保存模型`  
+`torch.save(model.state_dict(), '/kaggle/working/inception.pt')`  
 #### 通信部分
 #### 其他
 ### 客户端拆解
