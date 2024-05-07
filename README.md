@@ -33,6 +33,11 @@ CAU personal graduate project
 如果使用WSL作为服务器则需要安装docker desktop，安装完成后启动即可。  
  - **安装docker desktop**  
  [docker desktop官网](https://www.docker.com/products/docker-desktop/)  
+ (可能会遇到的问题：)
+ 1. **`docker: Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:5570 -> 0.0.0.0:0: listen tcp 0.0.0.0:5570: bind: An attempt was made to access a socket in a way forbidden by its access permissions.ERRO[0000] error waiting for container: context canceled`**  
+ 提示端口被占，但实际没有被占，其实这是Windows中的一个小问题，只需要**重启NAT网络**就可以解决了，执行如下两条命令：  
+ **`net stop winnat`**  
+ **`net start winnat`**  
 #### **服务器**  
  - **构建docker映像**  
  **`cd /your_path_to/DeepVisionVRServer/Docker/`**  
